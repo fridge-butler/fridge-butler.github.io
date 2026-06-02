@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifying Account...</title>
+  <style>
+    body {
+      background-color: #F5F7FA;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100vh; margin: 0; text-align: center; padding: 20px;
+    }
+    h2 { color: #1A1D27; margin-bottom: 8px; }
+    p { color: #6B7280; margin-bottom: 24px; }
+    .button {
+      background-color: #3B82F6; color: #FFFFFF; padding: 14px 28px;
+      border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      // Grab the Supabase PKCE code
+      var params = window.location.search || window.location.hash;
+      
+      // Route to your app's confirmation handler
+      var appUrl = "fridgemanager://login" + params; 
+      
+      setTimeout(function() { window.location.replace(appUrl); }, 500);
+      document.getElementById('manual-btn').href = appUrl;
+    };
+  </script>
+</head>
+<body>
+  <h2>Verifying Account...</h2>
+  <p>You are being redirected to Fridge Butler to complete your sign-in.</p>
+  <a id="manual-btn" href="#" class="button">Open App</a>
+</body>
+</html>
