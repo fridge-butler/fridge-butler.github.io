@@ -32,11 +32,12 @@
   </style>
   <script>
     window.onload = function() {
-      // 1. Grab the Supabase PKCE code from the URL
+      // 1. Grab the Supabase PKCE code (search) or Implicit Tokens (hash) from the URL
       var params = window.location.search;
+      var hash = window.location.hash;
       
       // 2. Construct your app's custom deep link
-      var appUrl = "fridgebutler://update-password" + params;
+      var appUrl = "fridgebutler://update-password" + params + hash;
       
       // 3. Attempt to launch the app securely via JavaScript
       setTimeout(function() {
