@@ -24,7 +24,7 @@
       var params = window.location.search || window.location.hash;
       
       // Route to your app's confirmation handler
-      var appUrl = "fridgemanager://login" + params; 
+      var appUrl = "fridgebutler://login" + params; 
       
       setTimeout(function() { window.location.replace(appUrl); }, 500);
       document.getElementById('manual-btn').href = appUrl;
